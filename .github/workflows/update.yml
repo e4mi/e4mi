@@ -1,0 +1,34 @@
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: deno
+        uses: denoland/setup-deno@v2.0.3
+          
+      - name: readme
+        run: |
+          deno eval 'console.log(
+            (await (await fetch("https://api.github.com/users/e4mi/repos")).json())
+              .map((i) => [i.name, i.description, i.html_url])
+              .filter(([, d]) => d)
+              .sort(([a], [b]) => a > b ? 1 : -1)
+              .map(([name, desc, url]) => `[${name}](${url}) ${desc}  `)
+              .join("\n")
+          )' > README.md
+
+      - name: push
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update README with latest repository list"
+          git push
