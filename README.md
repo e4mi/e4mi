@@ -5,4 +5,5 @@
 [files](https://github.com/e4mi/files) android file manager in 16kb  
 [mux](https://github.com/e4mi/mux) autostart web apps on subdomains  
 [os](https://github.com/e4mi/os) tiny os for 8086  
+[qrcode](https://github.com/e4mi/qrcode) android QR generator in 16kb  
 [tinyapks](https://github.com/e4mi/tinyapks) list of android apps under 1mb  
