@@ -6,4 +6,5 @@
 [mux](https://github.com/e4mi/mux) autostart web apps on subdomains  
 [os](https://github.com/e4mi/os) tiny os for 8086  
 [qrcode](https://github.com/e4mi/qrcode) android QR generator in 16kb  
+[qrscan](https://github.com/e4mi/qrscan) android QR scanner in 320kb  
 [tinyapks](https://github.com/e4mi/tinyapks) list of android apps under 1mb  
